@@ -1,0 +1,99 @@
+.vip-container {
+    padding: 40px;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    min-height: 100%;
+}
+
+.vip-container h2 {
+    font-size: 2.5rem;
+    color: #1a1a2e;
+    margin-bottom: 40px;
+    font-weight: 800;
+    text-align: center;
+    position: relative;
+}
+
+.vip-container h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #fbc531;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.vip-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.vip-card {
+    background: white;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    padding: 25px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-left: 6px solid #fbc531;
+}
+
+.vip-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 40px rgba(251, 197, 49, 0.2);
+}
+
+.rank {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fbc531;
+    width: 80px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.info {
+    flex: 1;
+    padding: 0 30px;
+    border-right: 1px solid #eee;
+}
+
+.info h3 {
+    margin: 0 0 8px 0;
+    color: #1a1a2e;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.info p {
+    margin: 0;
+    color: #888;
+    font-size: 1rem;
+}
+
+.spent {
+    text-align: center;
+    padding: 0 30px;
+}
+
+.spent span {
+    font-size: 1rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.amount {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #e94560;
+    margin-top: 5px;
+}

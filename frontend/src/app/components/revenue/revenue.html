@@ -1,0 +1,13 @@
+<div class="stats-container">
+    <h2>Revenue Statistics</h2>
+    <div class="stats-card" *ngIf="revenueData">
+        <div class="stat-item">
+            <h3>Total Paid Orders</h3>
+            <p class="value">{{ revenueData.ordersCount }}</p>
+        </div>
+        <div class="stat-item">
+            <h3>Total Revenue Generated</h3>
+            <p class="value sum">${{ revenueData.totalRevenue }}</p>
+        </div>
+    </div>
+</div>

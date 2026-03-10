@@ -1,0 +1,27 @@
+<div class="shopping-container">
+    <h2>Premium Collection</h2>
+    <div class="search-bar">
+        <label>Find by Price</label>
+        <input type="number" [(ngModel)]="searchPrice" placeholder="Exact amount...">
+        <button (click)="search()">Discover</button>
+        <button (click)="searchPrice = null; search()" style="background: #888;">Clear</button>
+    </div>
+
+    <div class="products-grid">
+        <div class="product-card" *ngFor="let product of products">
+            <img [src]="product.image ? product.image : 'https://ui-avatars.com/api/?name=' + product.name + '&background=random&size=300'"
+                alt="Product Image">
+            <div class="card-content">
+                <h3>{{ product.name }}</h3>
+                <p class="subtitle">Model: {{ product.model }} &bull; By: {{ product.madeBy }}</p>
+                <p class="price">${{ product.price }}</p>
+                <div class="action-area">
+                    <input type="number" min="1" [(ngModel)]="quantityMap[product._id]" class="qty-input">
+                    <button class="buy-btn" (click)="addToCart(product)">
+                        <span class="buy-icon">💳</span> BUY NOW
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

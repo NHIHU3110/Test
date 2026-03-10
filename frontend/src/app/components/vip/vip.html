@@ -1,0 +1,16 @@
+<div class="vip-container">
+    <h2>Top VIP Customers</h2>
+    <div class="vip-list">
+        <div class="vip-card" *ngFor="let vip of vips; let i = index">
+            <div class="rank">#{{ i + 1 }}</div>
+            <div class="info">
+                <h3>{{ vip.name }}</h3>
+                <p>{{ vip.email }}</p>
+            </div>
+            <div class="spent">
+                <span>Total Spent:</span>
+                <div class="amount">${{ vip.totalSpent }}</div>
+            </div>
+        </div>
+    </div>
+</div>

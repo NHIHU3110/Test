@@ -1,0 +1,28 @@
+.student-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Move up and down continuously */
+.marquee {
+    position: relative;
+    animation: moveUpDown 4s ease-in-out infinite alternate;
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(calc(100vh - 300px));
+    }
+}

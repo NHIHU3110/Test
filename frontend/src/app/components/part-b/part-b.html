@@ -1,0 +1,22 @@
+<nav class="navbar">
+    <div class="nav-links">
+        <a routerLink="/shopping" routerLinkActive="active">Shopping</a>
+        <div class="dropdown">
+            <a routerLink="/cart" routerLinkActive="active">Current Cart <span
+                    *ngIf="isEmployee$ | async">&#9662;</span></a>
+            <div class="dropdown-content" *ngIf="isEmployee$ | async">
+                <a routerLink="/revenue" routerLinkActive="active">Revenue Statistics</a>
+                <a routerLink="/vip" routerLinkActive="active">VIP Customers</a>
+            </div>
+        </div>
+    </div>
+    <div class="user-section">
+        <span *ngIf="isLoggedIn$ | async; else loginLink">
+            Welcome {{ (user$ | async)?.name }}
+            <button (click)="logout()" class="logout-btn">X</button>
+        </span>
+        <ng-template #loginLink>
+            <a routerLink="/login" routerLinkActive="active">Login</a>
+        </ng-template>
+    </div>
+</nav>

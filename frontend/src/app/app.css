@@ -1,0 +1,65 @@
+/* Premium Global Application Layout */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f9fa;
+    color: #333;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    height: 70px;
+    background: rgba(15, 52, 96, 0.95);
+    backdrop-filter: blur(10px);
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 280px;
+    background: white;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.02);
+    z-index: 5;
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+    background-color: transparent;
+    scroll-behavior: smooth;
+}
+
+.content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
