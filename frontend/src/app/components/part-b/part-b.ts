@@ -14,11 +14,13 @@ export class PartB {
   user$: Observable<any>;
   isLoggedIn$: Observable<boolean>;
   isEmployee$: Observable<boolean>;
+  isAdmin$: Observable<boolean>;
 
   constructor(private authService: AuthService, private router: Router) {
     this.user$ = this.authService.user$;
     this.isLoggedIn$ = new Observable(sub => this.authService.user$.subscribe(user => sub.next(!!user)));
     this.isEmployee$ = new Observable(sub => this.authService.user$.subscribe(user => sub.next(user && (user.role === 'Employee' || user.role === 'Admin'))));
+    this.isAdmin$ = new Observable(sub => this.authService.user$.subscribe(user => sub.next(user && user.role === 'Admin')));
   }
 
   logout() {

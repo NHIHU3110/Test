@@ -6,7 +6,7 @@
             <div class="dropdown-content">
                 <a routerLink="/cart" routerLinkActive="active">Current Cart</a>
                 <ng-container *ngIf="isEmployee$ | async">
-                    <a routerLink="/revenue" routerLinkActive="active">Revenue Statistics</a>
+                    <a *ngIf="isAdmin$ | async" routerLink="/revenue" routerLinkActive="active">Revenue Statistics</a>
                     <a routerLink="/vip" routerLinkActive="active">VIP Customers</a>
                 </ng-container>
             </div>
