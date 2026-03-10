@@ -43,15 +43,14 @@ body {
 }
 
 .main-content {
-    display: flex;
     flex: 1;
-    overflow: hidden;
+    position: relative;
     padding: 20px;
-    gap: 20px;
 }
 
 .sidebar {
     width: 300px;
+    height: calc(100vh - 120px);
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -59,19 +58,26 @@ body {
     border-radius: 24px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
     z-index: 5;
+    position: fixed;
+    /* Keep it fixed on the left while Part-A content scrolls inside it */
+    top: 100px;
+    left: 20px;
     overflow: hidden;
 }
 
 .content {
-    flex: 1;
-    overflow-y: auto;
+    margin-left: 340px;
+    /* Offset by sidebar width + gap */
+    width: calc(100% - 340px);
+    min-height: calc(100vh - 120px);
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 24px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-    scroll-behavior: smooth;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
 /* Custom Scrollbar for Glassmorphism */
