@@ -2,11 +2,13 @@
     <div class="nav-links">
         <a routerLink="/shopping" routerLinkActive="active">Shopping</a>
         <div class="dropdown">
-            <a routerLink="/cart" routerLinkActive="active">Current Cart <span
-                    *ngIf="isEmployee$ | async">&#9662;</span></a>
-            <div class="dropdown-content" *ngIf="isEmployee$ | async">
-                <a routerLink="/revenue" routerLinkActive="active">Revenue Statistics</a>
-                <a routerLink="/vip" routerLinkActive="active">VIP Customers</a>
+            <span class="dropdown-trigger">Cart &#9662;</span>
+            <div class="dropdown-content">
+                <a routerLink="/cart" routerLinkActive="active">Current Cart</a>
+                <ng-container *ngIf="isEmployee$ | async">
+                    <a routerLink="/revenue" routerLinkActive="active">Revenue Statistics</a>
+                    <a routerLink="/vip" routerLinkActive="active">VIP Customers</a>
+                </ng-container>
             </div>
         </div>
     </div>
