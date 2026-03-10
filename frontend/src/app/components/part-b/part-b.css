@@ -14,14 +14,13 @@
 .nav-links a,
 .user-section a,
 .user-section span {
-    color: #fff;
+    color: #1d1d1f;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.05rem;
     padding: 10px 20px;
     border-radius: 12px;
     transition: all 0.3s ease;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links a:hover,
@@ -31,8 +30,8 @@
 }
 
 .nav-links a.active {
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Glassmorphism Dropdown */
@@ -66,7 +65,7 @@
 }
 
 .dropdown-content a {
-    color: #fff;
+    color: #1d1d1f;
     padding: 12px 16px;
     margin-bottom: 5px;
     border-radius: 10px;

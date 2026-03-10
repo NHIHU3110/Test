@@ -6,11 +6,10 @@
 
 .stats-container h2 {
     font-size: 3rem;
-    color: #fff;
+    color: #1d1d1f;
     margin-bottom: 50px;
     font-weight: 800;
     text-align: center;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .stats-card {
