@@ -3,6 +3,13 @@
     <div class="search-bar">
         <label>Find by Price</label>
         <input type="number" [(ngModel)]="searchPrice" placeholder="Exact amount...">
+        <select [(ngModel)]="sortOption" (change)="sortProducts()" class="sort-select">
+            <option value="">Default Sorting</option>
+            <option value="priceAsc">Price: Low to High</option>
+            <option value="priceDesc">Price: High to Low</option>
+            <option value="nameAsc">Name: A to Z</option>
+            <option value="nameDesc">Name: Z to A</option>
+        </select>
         <button (click)="search()">Discover</button>
         <button (click)="searchPrice = null; search()" style="background: #888;">Clear</button>
     </div>

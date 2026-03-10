@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 export class Shopping implements OnInit {
   products: any[] = [];
   searchPrice: number | null = null;
+  sortOption: string = '';
   quantityMap: { [key: string]: number } = {};
 
   constructor(private apiService: ApiService, private cartService: CartService, private cdr: ChangeDetectorRef) { }
@@ -32,9 +33,26 @@ export class Shopping implements OnInit {
       this.apiService.getProducts().subscribe(data => {
         this.products = data;
         this.initQuantities();
+        this.sortProducts(); // ensure sorted on load
         this.cdr.detectChanges();
       });
     }
+  }
+
+  sortProducts() {
+    if (!this.products || this.products.length === 0) return;
+
+    if (this.sortOption === 'priceAsc') {
+      this.products.sort((a, b) => a.price - b.price);
+    } else if (this.sortOption === 'priceDesc') {
+      this.products.sort((a, b) => b.price - a.price);
+    } else if (this.sortOption === 'nameAsc') {
+      this.products.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (this.sortOption === 'nameDesc') {
+      this.products.sort((a, b) => b.name.localeCompare(a.name));
+    }
+
+    this.cdr.detectChanges();
   }
 
   initQuantities() {

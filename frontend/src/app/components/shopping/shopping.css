@@ -1,27 +1,17 @@
-/* Premium Styling for Shopping */
+/* Glassmorphism Shopping Rules */
 .shopping-container {
-    padding: 40px;
-    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    padding: 30px;
     min-height: 100%;
 }
 
 .shopping-container h2 {
-    font-size: 2.5rem;
-    color: #1a1a2e;
-    margin-bottom: 30px;
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 40px;
     font-weight: 800;
     text-align: center;
     position: relative;
-}
-
-.shopping-container h2::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: #0f3460;
-    margin: 10px auto;
-    border-radius: 2px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .search-bar {
@@ -29,55 +19,86 @@
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin-bottom: 40px;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 50px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .search-bar label {
-    font-weight: 600;
-    color: #333;
+    font-weight: 700;
+    color: #1d1d1f;
+    font-size: 1.1rem;
 }
 
 .search-bar input {
     padding: 12px 20px;
-    border: 2px solid #eee;
-    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
     font-size: 1rem;
+    font-family: inherit;
     transition: all 0.3s ease;
-    width: 250px;
+    width: 200px;
+    color: #1d1d1f;
 }
 
 .search-bar input:focus {
-    border-color: #0f3460;
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.8);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(15, 52, 96, 0.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.sort-select {
+    padding: 12px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    color: #1d1d1f;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
+}
+
+.sort-select:focus {
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
+    outline: none;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 .search-bar button {
     padding: 12px 25px;
     cursor: pointer;
-    background: #0f3460;
+    background: #1d1d1f;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     font-weight: bold;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    text-transform: uppercase;
-    font-size: 0.9rem;
+    font-family: inherit;
 }
 
 .search-bar button:hover {
-    background: #e94560;
+    background: #000;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3);
-}
-
-.search-bar button:active {
-    transform: translateY(0);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .products-grid {
@@ -87,11 +108,14 @@
 }
 
 .product-card {
-    background: white;
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     display: flex;
@@ -99,15 +123,16 @@
 }
 
 .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .product-card img {
     width: 100%;
-    height: 220px;
+    height: 240px;
     object-fit: cover;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .card-content {
@@ -119,70 +144,73 @@
 
 .product-card h3 {
     margin: 0 0 10px 0;
-    color: #1a1a2e;
-    font-size: 1.4rem;
-    font-weight: 700;
+    color: #1d1d1f;
+    font-size: 1.5rem;
+    font-weight: 800;
 }
 
 .subtitle {
-    color: #888;
-    font-size: 0.9rem;
+    color: rgba(29, 29, 31, 0.7);
+    font-size: 0.95rem;
     margin: 0 0 15px 0;
     flex: 1;
+    font-weight: 500;
 }
 
 .price {
     font-weight: 800;
     color: #e94560;
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin: 0 0 20px 0;
+    text-shadow: 0 2px 4px rgba(233, 69, 96, 0.2);
 }
 
 .action-area {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     align-items: center;
     margin-top: auto;
 }
 
 .qty-input {
-    width: 70px;
+    width: 60px;
     padding: 12px;
-    border: 2px solid #eee;
-    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
     text-align: center;
-    font-weight: bold;
-    font-size: 1rem;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #1d1d1f;
+    transition: all 0.3s;
 }
 
 .qty-input:focus {
-    border-color: #0f3460;
+    border-color: #e94560;
+    background: white;
     outline: none;
 }
 
 .buy-btn {
     flex: 1;
-    background: #e94560;
+    background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
     color: white;
     border: none;
-    padding: 12px 0;
-    border-radius: 8px;
+    padding: 14px 0;
+    border-radius: 12px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 800;
+    font-family: inherit;
     letter-spacing: 1px;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(255, 8, 68, 0.4);
 }
 
 .buy-btn:hover {
-    background: #d83a52;
-    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
-}
-
-.buy-icon {
-    margin-right: 8px;
-    font-size: 1.2rem;
+    box-shadow: 0 10px 25px rgba(255, 8, 68, 0.6);
+    transform: translateY(-2px);
 }
